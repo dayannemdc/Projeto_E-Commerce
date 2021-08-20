@@ -1,8 +1,9 @@
-create database db_Action_For_Life;
 
-use db_Action_For_Life;
-
-CREATE TABLE `Usuário` (
+ CREATE DATABASE Action_For_Life;
+ 
+ USE Action_for_life;
+ 
+ CREATE TABLE `Usuário` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`Nome completo` varchar(50) NOT NULL,
 	`Email` varchar(50) NOT NULL,
@@ -13,9 +14,9 @@ CREATE TABLE `Usuário` (
 CREATE TABLE `Produto` (
 	`id` int NOT NULL AUTO_INCREMENT,
 	`Nome` varchar(50) NOT NULL,
+	`Marca` varchar(50) NOT NULL,
+	`Descrição` varchar(255) NOT NULL,
 	`Preco` DECIMAL(10.2) NOT NULL,
-	`Quantidade` int NOT NULL,
-	`Frete` DECIMAL(10,2) NOT NULL,
 	`id_categoria` int NOT NULL,
 	PRIMARY KEY (`id`)
 );
@@ -30,4 +31,3 @@ CREATE TABLE `Categoria` (
 
 ALTER TABLE `Produto` ADD CONSTRAINT `Produto_fk0` FOREIGN KEY (`id_categoria`) REFERENCES `Categoria`(`id`);
 
-SELECT * FROM categoria, produto, usuário;
